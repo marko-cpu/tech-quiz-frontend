@@ -1,0 +1,142 @@
+{
+  "common": {
+    "login": "Log In",
+    "logout": "Log Out",
+    "signUp": "Sign Up",
+    "startQuiz": "Start Quiz",
+    "allQuizQuestions": "All Quiz Questions",
+    "addQuestion": "Add Question",
+    "question": "Question",
+    "subject": "Subject",
+    "correctAnswer": "Correct Answer",
+    "editQuestion": "Edit Question",
+    "deleteQuestion": "Delete Question",
+    "allSubjects": "All Subjects",
+    "deleteSuccess": "Question deleted successfully"
+  },
+
+  "home": {
+    "welcome": "Welcome to the",
+    "techQuiz": "Tech Quiz",
+    "intro": "Test your knowledge with interactive and fun quizzes on programming, algorithms, and cutting-edge technologies.",
+    "start": "Start Quiz"
+  },
+
+  "stepper": {
+    "next": "Next",
+    "previous": "Previous",
+    "welcome": "Welcome to the Quiz",
+    "choose": "Choose a subject",
+    "select": "Select a subject",
+    "number": "Number of questions",
+    "confirm": "Confirmation",
+    "subject": "Subject",
+    "enterNumQuestions": "Enter number of questions"
+  },
+
+  "quiz": {
+    "question": "Question",
+    "submitQuiz": "Submit Quiz"
+  },
+
+  "result": {
+    "totalScore": "Your total score is",
+    "youAnswered": "You answered",
+    "outOf": "out of",
+    "questionCorrectly": "questions correctly",
+    "retake": "Retake This Quiz",
+    "backQuiz": "Back to Start Quiz"
+  },
+
+  "login": {
+    "title": "Sign In",
+    "subtitle": "Sign in to continue",
+    "emailLabel": "Email address",
+    "passwordLabel": "Password",
+    "emailPlaceholder": "example@email.com",
+    "buttonText": "Sign In",
+    "loadingText": "Logging in...",
+    "noAccount": "Don't have an account?",
+    "createAccount": "Create one here",
+    "errors": {
+      "emailRequired": "Email is required!",
+      "emailInvalid": "Invalid email format!",
+      "passwordRequired": "Password is required!",
+      "passwordMinLength": "The password must be at least 6 characters long!"
+    }
+  },
+
+  "register": {
+    "title": "Create Account",
+    "subtitle": "Register to continue",
+    "usernameLabel": "Username",
+    "emailLabel": "Email Address",
+    "passwordLabel": "Password",
+    "usernamePlaceholder": "Enter username",
+    "emailPlaceholder": "example@email.com",
+    "buttonText": "Sign Up",
+    "existingAccount": "Already have an account?",
+    "loginLink": "Login here",
+    "errors": {
+      "usernameRequired": "Username is required!",
+      "usernameLength": "Username must be between 3 and 20 characters!",
+      "emailRequired": "Email is required!",
+      "emailInvalid": "Invalid email format!",
+      "passwordRequired": "Password is required!",
+      "passwordLength": "The password must be at least 6 characters long!",
+      "invalidCredentials": "Incorrect username or password.",
+      "serverError": "An error occurred on the server. Please try again later.",
+      "unknownError": "An unknown error occurred.",
+      "networkError": "Network issue. Please check your internet connection."
+    }
+  },
+  "admin": {
+    "title": "Admin Dashboard",
+    "subtitle": "Manage your quizzes and content with ease.",
+    "quickActions": "Quick Actions",
+    "createQuiz": "Create a New Quiz",
+    "manageQuizzes": "Manage Existing Quizzes"
+  },
+  "addQuestion": {
+    "title": "Add New Question",
+    "selectSubject": "Select a Subject",
+    "addNewSubject": "Add a New Subject",
+    "questionLabel": "Question",
+    "questionType": "Question Type",
+    "singleAnswer": "Single Answer",
+    "multipleAnswer": "Multiple Answer",
+    "choices": "Choices",
+    "correctAnswer": "Correct Answer",
+    "correctAnswers": "Correct Answers",
+    "addChoice": "Add Choice",
+    "addCorrectAnswer": "Add Correct Answer",
+    "saveQuestion": "Save Question",
+    "backToQuestions": "Back to Questions",
+    "successMessage": "Question added successfully.",
+    "errorMessage": "Please provide at least one correct answer."
+  },
+  "getAllQuiz": {
+    "title": "All Quiz Questions",
+    "addQuestion": "Add Question",
+    "loading": "Loading...",
+    "allSubjects": "All Subjects",
+    "correctAnswer": "Correct Answer(s)",
+    "deleteSuccess": "Question deleted successfully.",
+    "edit": "Edit Question",
+    "delete": "Delete Question"
+  },
+"update": {
+    "title": "Update quiz question",
+    "loading": "Loading...",
+    "questionLabel": "Question:",
+    "choicesLabel": "Options:",
+    "correctAnswerLabel": "Correct answer(s):",
+    "updateButton": "Update question",
+    "backToAll": "Back to all questions"
+},
+"unauthorized": {
+  "title": "Unauthorized Access",
+  "message": "You do not have permission to view this page."
+}
+
+}

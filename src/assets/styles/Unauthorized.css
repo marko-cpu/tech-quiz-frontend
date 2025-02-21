@@ -1,0 +1,30 @@
+/* Custom CSS to add some padding, center the content, and give it a modern look */
+.unauthorized-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+  }
+  
+  .unauthorized-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+  }
+  
+  .unauthorized-title {
+    font-size: 2rem;
+    color: #dc3545; /* Bootstrap danger color */
+    margin-bottom: 20px;
+  }
+  
+  .unauthorized-message {
+    font-size: 1rem;
+    color: #6c757d; /* Bootstrap secondary text color */
+  }
+  

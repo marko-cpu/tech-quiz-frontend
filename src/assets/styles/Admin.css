@@ -1,0 +1,79 @@
+/* Admin.css */
+.admin-container {
+	font-family: 'Poppins', sans-serif;
+	background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+	min-height: 90vh;
+}
+
+.admin-header {
+	background: linear-gradient(135deg, #6e8efb, #4a6cf7);
+	color: white;
+	padding: 60px 20px;
+	border-radius: 0 0 30px 30px;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.lead {
+	color: white;
+}
+
+.admin-header h1 {
+	font-weight: 700;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.admin-header p {
+	font-size: 1.25rem;
+	opacity: 0.9;
+}
+
+.card {
+	border: none;
+	border-radius: 20px;
+	overflow: hidden;
+	background: rgba(255, 255, 255, 0.9);
+	backdrop-filter: blur(10px);
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+	font-weight: 600;
+	color: #2d3748;
+}
+
+.action-btn {
+	border: none;
+	border-radius: 12px;
+	padding: 15px 20px;
+	font-size: 1.1rem;
+	font-weight: 500;
+	transition: all 0.3s ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.action-btn:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.btn-primary {
+	background: linear-gradient(135deg, #6e8efb, #4a6cf7);
+	color: white;
+}
+
+.btn-primary:hover {
+	background: linear-gradient(135deg, #4a6cf7, #6e8efb);
+}
+
+.btn-success {
+	background: linear-gradient(135deg, #48bb78, #38a169);
+	color: white;
+}
+
+.btn-success:hover {
+	background: linear-gradient(135deg, #38a169, #48bb78);
+}

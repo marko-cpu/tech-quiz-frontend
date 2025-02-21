@@ -1,0 +1,108 @@
+/* GetAllQuiz.css */
+.get-all-quiz-container {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .page-title {
+    font-weight: 600;
+    color: #2d3748;
+  }
+  
+  .divider {
+    border-top: 2px solid #e2e8f0;
+    margin: 20px 0;
+  }
+  
+  .question-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .question-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .question-header {
+    margin-bottom: 15px;
+  }
+  
+  .question-text {
+    font-weight: 500;
+    color: #2d3748;
+  }
+  
+  .choices-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .choice-item {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #4a5568;
+  }
+  
+  .correct-answer {
+    font-weight: 500;
+    color: #48bb78;
+    margin-top: 15px;
+  }
+  
+  .btn-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .btn {
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .btn-warning {
+    background: linear-gradient(135deg, #f6e05e, #ecc94b);
+    border: none;
+    color: #2d3748;
+  }
+  
+  .btn-warning:hover {
+    background: linear-gradient(135deg, #ecc94b, #f6e05e);
+  }
+  
+  .btn-danger {
+    background: linear-gradient(135deg, #e53e3e, #c53030);
+    border: none;
+    color: white;
+  }
+  
+  .btn-danger:hover {
+    background: linear-gradient(135deg, #c53030, #e53e3e);
+  }
+  
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+  }
+  
+  .spinner-border {
+    width: 3rem;
+    height: 3rem;
+  }
+  

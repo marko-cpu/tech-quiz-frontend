@@ -1,0 +1,148 @@
+{
+  "common": {
+    "login": "Prijava",
+    "logout": "Odjava",
+    "signUp": "Registracija",
+    "startQuiz": "Započni kviz",
+    "allQuizQuestions": "Sva pitanja kviza",
+    "addQuestion": "Dodaj pitanje",
+    "question": "Pitanje",
+    "subject": "Predmet",
+    "correctAnswer": "Tačan odgovor",
+    "editQuestion": "Izmeni pitanje",
+    "deleteQuestion": "Obriši pitanje",
+    "allSubjects": "Svi predmeti",
+    "deleteSuccess": "Pitanje uspešno obrisano"
+  },
+
+  "home": {
+    "welcome": "Dobrodošli na",
+    "techQuiz": "Tehno Kviz",
+    "intro": "Testiraj svoje znanje uz interaktivne i zabavne kvizove o programiranju, algoritmima i najnovijim tehnologijama.",
+    "start": "Započni kviz"
+  },
+  "stepper": {
+    "next": "Dalje",
+    "previous": "Nazad",
+    "welcome": "Dobrodošli na Kviz",
+    "choose": "Izaberi oblast",
+    "select": "Selektuj oblast",
+    "number": "Broj pitanja",
+    "confirm": "Potvrda",
+    "subject": "Oblast",
+    "enterNumQuestions": "Unesite broj pitanja"
+  },
+
+  "quiz": {
+    "question": "Pitanje",
+    "submitQuiz": "Potvrdi"
+  },
+
+  "result": {
+    "totalScore": "Tvoj ukupni rezultat",
+    "youAnswered": "Odgovorili ste na",
+    "outOf": "od",
+    "questionCorrectly": "pitanja tačno",
+    "retake": "Ponovi ovaj kviz",
+    "backQuiz": "Nazad na početnu"
+  },
+
+  
+    "login": {
+      "title": "Prijava",
+      "subtitle": "Prijavite se da nastavite",
+      "emailLabel": "Email adresa",
+      "passwordLabel": "Lozinka",
+      "emailPlaceholder": "primjer@email.com",
+      "buttonText": "Prijavi se",
+      "loadingText": "Prijava u toku...",
+      "noAccount": "Nemate nalog?",
+      "createAccount": "Kreirajte ga ovde",
+      "errors": {
+      "usernameRequired": "Korisničko ime je obavezno!",
+      "usernameLength": "Korisničko ime mora imati između 3 i 20 karaktera!",
+      "emailRequired": "Email adresa je obavezna!",
+      "emailInvalid": "Neispravan format email adrese!",
+      "passwordRequired": "Lozinka je obavezna!",
+      "passwordMinLength": "Lozinka mora imati najmanje 6 karaktera!"
+      }
+    },
+
+    "register": {
+    "title": "Kreirajte nalog",
+    "subtitle": "Registrujte se da nastavite",
+    "usernameLabel": "Korisničko ime",
+    "emailLabel": "Email adresa",
+    "passwordLabel": "Lozinka",
+    "usernamePlaceholder": "Unesite korisničko ime",
+    "emailPlaceholder": "primjer@email.com",
+    "buttonText": "Registruj se",
+    "existingAccount": "Već imate nalog?",
+    "loginLink": "Prijavite se ovde",
+    "errors": {
+      "usernameRequired": "Korisničko ime je obavezno!",
+      "usernameLength": "Korisničko ime mora imati između 3 i 20 karaktera!",
+      "emailRequired": "Email adresa je obavezna!",
+      "emailInvalid": "Neispravan format email adrese!",
+      "passwordRequired": "Lozinka je obavezna!",
+      "passwordLength": "Lozinka mora imati najmanje 6 karaktera!",
+      "invalidCredentials": "Pogrešno korisničko ime ili lozinka.",
+      "serverError": "Došlo je do greške na serveru. Pokušajte kasnije.",
+      "unknownError": "Došlo je do nepoznate greške.",
+      "networkError": "Problem sa mrežom. Proverite internet konekciju."
+    }
+  },
+  
+    "admin": {
+      "title": "Administratorska Tabla",
+      "subtitle": "Upravljajte svojim kvizovima i sadržajem lako.",
+      "quickActions": "Brze Akcije",
+      "createQuiz": "Kreiraj Novi Kviz",
+      "manageQuizzes": "Upravljaj Postojećim Kvizovima"
+    },
+    "addQuestion": {
+    "title": "Dodaj novo pitanje",
+    "selectSubject": "Izaberite predmet",
+    "addNewSubject": "Dodajte novi predmet",
+    "questionLabel": "Pitanje",
+    "questionType": "Tip pitanja",
+    "singleAnswer": "Jedan tačan odgovor",
+    "multipleAnswer": "Više tačnih odgovora",
+    "choices": "Opcije",
+    "correctAnswer": "Tačan odgovor",
+    "correctAnswers": "Tačni odgovori",
+    "addChoice": "Dodaj opciju",
+    "addCorrectAnswer": "Dodaj tačan odgovor",
+    "saveQuestion": "Sačuvaj pitanje",
+    "backToQuestions": "Nazad na pitanja",
+    "successMessage": "Pitanje je uspešno dodato.",
+    "errorMessage": "Molimo vas da unesete bar jedan tačan odgovor."
+  },
+  "getAllQuiz": {
+    "title": "Sva pitanja kviza",
+    "addQuestion": "Dodaj pitanje",
+    "loading": "Učitavanje...",
+    "allSubjects": "Svi predmeti",
+    "correctAnswers": "Tačni odgovori",
+    "edit": "Izmeni pitanje",
+    "delete": "Obriši pitanje",
+    "deleteSuccess": "Pitanje je uspešno obrisano",
+    "error": "Došlo je do greške. Pokušajte ponovo."
+  },
+  "update": {
+    "title": "Ažuriraj pitanje kviza",
+    "loading": "Učitavanje...",
+    "questionLabel": "Pitanje:",
+    "choicesLabel": "Opcije:",
+    "correctAnswerLabel": "Tačan odgovor(i):",
+    "updateButton": "Ažuriraj pitanje",
+    "backToAll": "Nazad na sva pitanja"
+  },
+  "unauthorized": {
+    "title": "Nedozvoljen pristup",
+    "message": "Nemate dozvolu za pristup ovom delu sajta."
+  }
+  
+  
+  
+}

@@ -1,65 +1,90 @@
-/* Register.css */
 .register-container {
-    background: linear-gradient(135deg, #1e3c72, #2a5298);
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
-}
-
-@keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.register-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    min-height: 100vh;
+  }
+  
+  .register-container::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: 
+      radial-gradient(circle at 70% 20%, rgba(255,255,255,0.1) 0%, transparent 40%),
+      repeating-linear-gradient(
+        -45deg,
+        rgba(255,255,255,0.03) 0px,
+        rgba(255,255,255,0.03) 2px,
+        transparent 2px,
+        transparent 4px
+      );
+    animation: float 20s linear infinite;
+    transform: translate(-50%, -50%);
+  }
+  
+  @keyframes float {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+  
+  .register-card {
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
-}
-
-
-
-.form-control {
+    width: 100%;
+    max-width: 450px;
+    padding: 2rem;
+  }
+  
+  .form-control {
     border: 2px solid #e2e8f0;
     border-radius: 8px;
     padding: 0.75rem 1rem;
     transition: all 0.3s ease;
-}
-
-.form-control:focus {
+  }
+  
+  .form-control:focus {
     border-color: #4299e1;
     box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
-}
-
-.btn-primary {
+  }
+  
+  .btn-primary {
     background: #4299e1;
     border: none;
     transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
+  }
+  
+  .btn-primary:hover {
     background: #3182ce;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(66, 153, 225, 0.3);
-}
-
-.hover-primary {
+  }
+  
+  .hover-primary {
     color: #6b7280;
     transition: all 0.3s ease;
-}
-
-.hover-primary:hover {
+  }
+  
+  .hover-primary:hover {
     color: #4299e1 !important;
-}
-
-.invalid-feedback {
+  }
+  
+  .invalid-feedback {
     color: #e53e3e;
     font-size: 0.85em;
-}
-
-.alert {
+  }
+  
+  .alert {
     border-radius: 8px;
     border: none;
     padding: 1rem;
@@ -79,4 +104,17 @@
   .loading-spinner {
     display: inline-block;
     margin-left: 0.5rem;
+  }
+  
+ 
+  .password-toggle-btn {
+    background: transparent;
+    border: none;
+    color: #718096;
+    transition: color 0.2s ease;
+  }
+  
+  .password-toggle-btn:hover {
+    color: #4299e1;
+    background: rgba(66, 153, 225, 0.1);
   }

@@ -80,10 +80,10 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container d-flex justify-content-center align-items-center min-vh-100">
+    <div className="login-container d-flex justify-content-center  px-3  min-vh-100 ">
       <div
         className="card login-card p-3 pb-5 shadow-lg"
-        style={{ width: "100%", maxWidth: "450px"}}
+        
       >
         <div className="card-body">
           <div className="text-center mb-5">
@@ -142,7 +142,7 @@ const Login = () => {
 
             <div className="d-grid mb-3">
               <button
-                className="btn btn-lg btn-primary fw-bold py-3 justify-content-center"
+                className="btn btn-lg btn-primary fw-bold py-2 justify-content-center"
                 disabled={loading}
               >
                 {loading ? (

@@ -93,8 +93,8 @@ const Register = () => {
   };
 
   return (
-    <div className="register-container d-flex justify-content-center align-items-center min-vh-100  p-2">
-    <div className="card register-card p-3 p-md-5 shadow" style={{ width: "100%", maxWidth: "450px" }}>
+    <div className="register-container d-flex justify-content-center  px-3  min-vh-100">
+    <div className="card register-card p-3 p-md-5 shadow" >
       {successful ? (
         <div className="text-center p-4">
           <div className="mb-4">
@@ -210,14 +210,14 @@ const Register = () => {
                   </div>
 
                   <div className="d-grid mb-3">
-                    <button className="btn btn-lg btn-primary rounded-pill justify-content-center py-3 fw-bold">
+                    <button className="btn btn-lg btn-primary rounded-pill justify-content-center fw-bold">
                     {t('register.buttonText')}
                     </button>
                   </div>
                 </>
               )}
 
-              <div className="text-center mt-4">
+              <div className="text-center mt-3">
                 <p className="text-muted small">
                 {t('register.existingAccount')}{" "}
                   <Link

@@ -8,10 +8,12 @@ const Navbar = () => {
   const { t, i18n } = useTranslation();
   const [showAdminBoard, setShowAdminBoard] = useState(false);
   const [currentUser, setCurrentUser] = useState(undefined);
+  const [isNavCollapsed, setIsNavCollapsed] = useState(true);
   const [selectedLanguage, setSelectedLanguage] = useState(
     localStorage.getItem("i18nextLng") || "en"
   );
-
+  const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
+  const closeNav = () => setIsNavCollapsed(true);
   useEffect(() => { 
     const user = AuthService.getCurrentUser();
     if (user) {
@@ -32,26 +34,24 @@ const Navbar = () => {
   const handleLanguageChange = (e) => {
     const newLanguage = e.target.value;
     setSelectedLanguage(newLanguage);
+    closeNav();
   };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
       <div className="container-fluid">
-        <NavLink className="navbar-brand tech-brand" to="/">
+        <NavLink className="navbar-brand tech-brand" to="/" onClick={closeNav}>
           {t('home.techQuiz')}
         </NavLink>
         <button
           className="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#collapsibleNavbar"
-          aria-controls="navbarNav"
-          aria-expanded="false"
           aria-label="Toggle navigation"
+          onClick={handleNavCollapse}
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="collapsibleNavbar">
+        <div className={`collapse navbar-collapse ${!isNavCollapsed ? 'show' : ''}`} id="collapsibleNavbar">
           <ul className="navbar-nav ms-auto">
             {/* Language Selector */}
             <li className="nav-item dropdown me-2">
@@ -62,13 +62,12 @@ const Navbar = () => {
               >
                 <option value="en">🇬🇧 English</option>
                 <option value="srb">🇷🇸 Srpski</option>
-               
               </select>
             </li>
 
             {currentUser && (
               <li className="nav-item">
-                <Link to={"/quiz-stepper"} className="nav-link">
+                <Link to="/quiz-stepper" className="nav-link" onClick={closeNav}>
                   {t('common.startQuiz')}
                 </Link>
               </li>
@@ -76,34 +75,38 @@ const Navbar = () => {
             
             {showAdminBoard && (
               <li className="nav-item">
-                <NavLink className="nav-link" to="/admin">
+                <NavLink className="nav-link" to="/admin" onClick={closeNav}>
                   Admin
                 </NavLink>
               </li>
             )}
 
             {currentUser ? (
-              <div className="navbar-nav ml-auto">
+              <div className="navbar-nav">
                 <li className="nav-item">
-                  <Link to={"/"} className="nav-link">
+                  <Link to="/" className="nav-link" onClick={closeNav}>
                     {currentUser.username}
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <a href="/login" className="nav-link" onClick={logOut}>
+                  <a href="/login" className="nav-link" onClick={(e) => {
+                    e.preventDefault();
+                    closeNav();
+                    logOut();
+                  }}>
                     {t('common.logout')}
                   </a>
                 </li>
               </div>
             ) : (
-              <div className="navbar-nav ml-auto">
+              <div className="navbar-nav">
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/login">
+                  <NavLink className="nav-link" to="/login" onClick={closeNav}>
                     {t('common.login')}
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/register">
+                  <NavLink className="nav-link" to="/register" onClick={closeNav}>
                     {t('common.signUp')}
                   </NavLink>
                 </li>

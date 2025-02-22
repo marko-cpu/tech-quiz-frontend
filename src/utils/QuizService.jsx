@@ -2,7 +2,7 @@ import axios from 'axios'
 
 
 export const api = axios.create({
-    baseURL: "http://localhost:9191/api/quiz"
+    baseURL: "https://tech-quiz-backend-production.up.railway.app/api/quiz"
 })
 
 

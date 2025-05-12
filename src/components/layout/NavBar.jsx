@@ -1,34 +1,33 @@
 import { useState, useEffect } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import "./../../assets/styles/Navbar.css";
-import AuthService from "../../services/auth.service";
+import { useAuth } from "../../common/AuthProvider";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
-  const [showAdminBoard, setShowAdminBoard] = useState(false);
-  const [currentUser, setCurrentUser] = useState(undefined);
+  const navigate = useNavigate();
+  const { currentUser, roles, logOut } = useAuth();
+  const showAdminBoard = roles?.includes("ROLE_ADMIN");
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
   const [selectedLanguage, setSelectedLanguage] = useState(
     localStorage.getItem("i18nextLng") || "en"
   );
   const handleNavCollapse = () => setIsNavCollapsed(!isNavCollapsed);
   const closeNav = () => setIsNavCollapsed(true);
-  useEffect(() => { 
-    const user = AuthService.getCurrentUser();
-    if (user) {
-      setCurrentUser(user);
-      setShowAdminBoard(user.roles.includes("ROLE_ADMIN"));
-    }
-  }, []);
 
   useEffect(() => {
     i18n.changeLanguage(selectedLanguage);
     localStorage.setItem("i18nextLng", selectedLanguage);
   }, [selectedLanguage, i18n]);
 
-  const logOut = () => {
-    AuthService.logout();
+  const handleLogout = () => {
+    try {
+      logOut();
+      navigate("/login");
+    } catch (error) {
+      console.error("Logout error:", error);
+    }
   };
 
   const handleLanguageChange = (e) => {
@@ -41,7 +40,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm sticky-top">
       <div className="container-fluid">
         <NavLink className="navbar-brand tech-brand" to="/" onClick={closeNav}>
-          {t('home.techQuiz')}
+          {t("home.techQuiz")}
         </NavLink>
         <button
           className="navbar-toggler"
@@ -51,7 +50,12 @@ const Navbar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className={`collapse navbar-collapse ${!isNavCollapsed ? 'show' : ''}`} id="collapsibleNavbar">
+        <div
+          className={`collapse navbar-collapse ${
+            !isNavCollapsed ? "show" : ""
+          }`}
+          id="collapsibleNavbar"
+        >
           <ul className="navbar-nav ms-auto">
             {/* Language Selector */}
             <li className="nav-item dropdown me-2">
@@ -67,16 +71,20 @@ const Navbar = () => {
 
             {currentUser && (
               <li className="nav-item">
-                <Link to="/quiz-stepper" className="nav-link" onClick={closeNav}>
-                  {t('common.startQuiz')}
+                <Link
+                  to="/quiz-stepper"
+                  className="nav-link"
+                  onClick={closeNav}
+                >
+                  {t("common.startQuiz")}
                 </Link>
               </li>
             )}
-            
+
             {showAdminBoard && (
               <li className="nav-item">
                 <NavLink className="nav-link" to="/admin" onClick={closeNav}>
-                  Admin
+                  Admin Dashboard
                 </NavLink>
               </li>
             )}
@@ -89,12 +97,16 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <a href="/login" className="nav-link" onClick={(e) => {
-                    e.preventDefault();
-                    closeNav();
-                    logOut();
-                  }}>
-                    {t('common.logout')}
+                  <a
+                    href="/login"
+                    className="nav-link"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      closeNav();
+                      handleLogout();
+                    }}
+                  >
+                    {t("common.logout")}
                   </a>
                 </li>
               </div>
@@ -102,12 +114,16 @@ const Navbar = () => {
               <div className="navbar-nav">
                 <li className="nav-item">
                   <NavLink className="nav-link" to="/login" onClick={closeNav}>
-                    {t('common.login')}
+                    {t("common.login")}
                   </NavLink>
                 </li>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/register" onClick={closeNav}>
-                    {t('common.signUp')}
+                  <NavLink
+                    className="nav-link"
+                    to="/register"
+                    onClick={closeNav}
+                  >
+                    {t("common.signUp")}
                   </NavLink>
                 </li>
               </div>

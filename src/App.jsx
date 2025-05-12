@@ -16,6 +16,9 @@ import Register from "./components/auth/Register";
 import AdminRoute from "./services/AdminRoute";
 import Unauthorized from "./components/Unauthorized";
 import AuthService from "./services/auth.service";
+import { AuthProvider } from "./common/AuthProvider";
+
+
 function App() {
   const [currentUser, setCurrentUser] = useState(undefined);
 
@@ -26,7 +29,7 @@ function App() {
     }
   }, []);
   return (
-    <>
+    <AuthProvider>
       <Router>
         <Navbar />
         <Routes>
@@ -53,7 +56,7 @@ function App() {
           <Route path="/unauthorized" element={<Unauthorized />} />
         </Routes>
       </Router>
-    </>
+    </AuthProvider>
   );
 }
 

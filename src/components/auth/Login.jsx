@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./../../assets/styles/Login.css";
 import AuthService from "../../services/auth.service";
+import { useAuth } from "../../common/AuthProvider";
 import { useTranslation } from "react-i18next";
 const Login = () => {
   let navigate = useNavigate();
@@ -13,13 +14,13 @@ const Login = () => {
   const [errors, setErrors] = useState({});
 
   const { t } = useTranslation();
+  const { currentUser, updateUser } = useAuth();
 
   useEffect(() => {
-    const currentUser = AuthService.getCurrentUser();
     if (currentUser) {
       navigate("/");
     }
-  }, [navigate]);
+  }, [currentUser, navigate]);
 
   const onChangeUsername = (e) => {
     setUsername(e.target.value);
@@ -58,33 +59,32 @@ const Login = () => {
     AuthService.login(username, password).then(
       () => {
         navigate("/");
-        window.location.reload();
+        const currentUser = AuthService.getCurrentUser();
+        updateUser(currentUser);
       },
       (error) => {
         setLoading(false);
-      
+
         if (error.response) {
           if (error.response.status === 401) {
-            setMessage(t("register.errors.invalidCredentials")); 
+            setMessage(t("register.errors.invalidCredentials"));
           } else if (error.response.status === 500) {
             setMessage(t("register.errors.serverError"));
           } else {
-            setMessage(error.response.data?.message || t("register.errors.unknownError"));
+            setMessage(
+              error.response.data?.message || t("register.errors.unknownError")
+            );
           }
         } else {
           setMessage(t("register.errors.networkError"));
         }
       }
-  
     );
   };
 
   return (
     <div className="login-container d-flex justify-content-center  px-3  min-vh-100 ">
-      <div
-        className="card login-card p-3 pb-5 shadow-lg"
-        
-      >
+      <div className="card login-card p-3 pb-5 shadow-lg">
         <div className="card-body">
           <div className="text-center mb-5">
             <h2 className="mb-2 fw-bold">{t("login.title")}</h2>
